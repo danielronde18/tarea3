@@ -31,3 +31,9 @@ def cov_matrix(mat):
 
 print(cov_matrix(datos))
 
+vals,vecs= np.linalg.eig(cov_matrix(datos))
+columnas=vecs.shape[1]
+
+for i in range(columnas):
+	print ("eigenvalor",i+1,vals[i])
+	print ("eigenvector",i+1,vecs[:,i])
