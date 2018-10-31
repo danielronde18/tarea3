@@ -21,3 +21,15 @@ plot_transformada(imagen_fft)
 plt.title('transformada de fourier')
 plt.savefig('ronderoscarlos_FT2D.pdf.')
 
+fraccion=0.1
+
+imagen_fft2=imagen_fft.copy()
+r,c= imagen_fft2.shape
+imagen_fft2[int(r*fraccion):int(r*(1-fraccion))]=0
+imagen_fft2[:, int(c*fraccion):int(c*(1-fraccion))]=0
+
+plt.figure()
+plot_transformada(imagen_fft2)
+plt.title('filtrado')
+plt.savefig('ronderoscarlos_FT2D_filtrada.pdf.')
+
