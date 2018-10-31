@@ -33,3 +33,9 @@ plot_transformada(imagen_fft2)
 plt.title('filtrado')
 plt.savefig('ronderoscarlos_FT2D_filtrada.pdf.')
 
+imagen_nueva=fftpack.ifft2(imagen_fft2).real
+
+plt.figure()
+plt.imshow(imagen_nueva,plt.cm.gray)
+plt.title('imagen reconstruida')
+plt.savefig('ronderoscarlos_Imagen_filtrada.pdf')
